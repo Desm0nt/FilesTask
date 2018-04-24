@@ -40,7 +40,7 @@ namespace FilesTask
                 {
                     data[index] = (byte)fileStream.ReadByte();
                 }
-                Console.WriteLine(Encoding.UTF8.GetString(data)); // Displays: MyValue 
+                Console.WriteLine(Encoding.UTF8.GetString(data));
             }
             Console.WriteLine("\n\nPress any key to exit");
             Console.ReadLine();

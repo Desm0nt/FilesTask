@@ -13,12 +13,10 @@ namespace FilesTask
         {
             string path = Directory.GetCurrentDirectory();
             string[] fileArray = Directory.GetFiles(path);
-            Console.WriteLine("--- Files: ---");
-            int i = 0;
-            foreach (string name in fileArray)
+            Console.WriteLine("--- Files: ---");            
+            for(int i = 0; i< fileArray.Length; i++)
             {
-                Console.WriteLine((i+1) + ". " + name);
-                i++;
+                Console.WriteLine((i+1) + ". " + fileArray[i]);
             }
             Console.WriteLine("Select the file");
             int filenum = 0;
@@ -36,9 +34,9 @@ namespace FilesTask
             using (FileStream fileStream = File.OpenRead(fileArray[filenum-1]))
             {
                 byte[] data = new byte[fileStream.Length];
-                for (int index = 0; index < fileStream.Length; index++)
+                for (int i = 0; i < fileStream.Length; i++)
                 {
-                    data[index] = (byte)fileStream.ReadByte();
+                    data[i] = (byte)fileStream.ReadByte();
                 }
                 Console.WriteLine(Encoding.UTF8.GetString(data));
             }
